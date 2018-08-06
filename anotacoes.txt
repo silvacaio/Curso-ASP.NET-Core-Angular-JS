@@ -1,0 +1,7 @@
+1º Aula: CONCLUIDA
+	ASP.NET Core:
+		Comandos .NET Cli: .dotnet -help
+		
+		Standar Library: Informa a possibilidade de conversçao de aplicações em dotnet framework para o dotnet core.
+	
+

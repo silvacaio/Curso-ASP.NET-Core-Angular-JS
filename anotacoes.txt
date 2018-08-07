@@ -1,7 +1,22 @@
-1� Aula: CONCLUIDA
+1 Aula - Historia: CONCLUIDA
 	ASP.NET Core:
 		Comandos .NET Cli: .dotnet -help
 		
-		Standar Library: Informa a possibilidade de convers�ao de aplica��es em dotnet framework para o dotnet core.
-	
+		Standar Library: Informa a possibilidade de convers�ao de aplica��es em dotnet framework para o dotnet core.
+
+__________________________________________
+
+2 Aula - Configuração do ambiente: CONCLUIDA
+	Download .net.core: microsoft.net
+
+	Independente da plataforma existe suporte, documentação...
+
+	Gerenciamento de versões: dotnet --info
+	Global.json: Define a versão do .net a ser utilizada na aplicação.
+
+
+3 Aula - Primeira APP: CONCLUIDA
+	Utilizando o Visual Studio.
+
+	Bower: repositorio de projetos (assim como o NuGet). O Bower é um repositorio front-end.
 

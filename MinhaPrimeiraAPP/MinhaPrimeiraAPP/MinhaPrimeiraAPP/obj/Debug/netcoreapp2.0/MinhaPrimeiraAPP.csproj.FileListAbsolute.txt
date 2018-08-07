@@ -1,0 +1,11 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\bin\Debug\netcoreapp2.0\MinhaPrimeiraAPP.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\bin\Debug\netcoreapp2.0\MinhaPrimeiraAPP.runtimeconfig.json
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\bin\Debug\netcoreapp2.0\MinhaPrimeiraAPP.runtimeconfig.dev.json
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\bin\Debug\netcoreapp2.0\MinhaPrimeiraAPP.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\bin\Debug\netcoreapp2.0\MinhaPrimeiraAPP.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.csprojResolveAssemblyReference.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.AssemblyInfoInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.AssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\MinhaPrimeiraAPP\MinhaPrimeiraAPP\MinhaPrimeiraAPP\obj\Debug\netcoreapp2.0\MinhaPrimeiraAPP.pdb

@@ -13,6 +13,7 @@ __________________________________________
 
 	Gerenciamento de versões: dotnet --info
 	Global.json: Define a versão do .net a ser utilizada na aplicação.
+__________________________________________
 
 
 3 Aula - Primeira APP: CONCLUIDA
@@ -20,3 +21,18 @@ __________________________________________
 
 	Bower: repositorio de projetos (assim como o NuGet). O Bower é um repositorio front-end.
 
+__________________________________________
+
+4 Aula - Middleware : PAROU NOS 15:30
+
+	Middlewares: manipulam dados entre os requests e responses (pipeline).
+	Owin (Open Web interface for .NET): Antigamente o .NET dependendia de uma plataforma (server, web host) para rodar (IIS).
+		 								Utiliza uma interface para comunicar estes dois componentes.
+
+	Interfaces utilizadas:
+		
+		IHostingEnvironment: Fornence informações sobre o ambiente de hospedagem.
+		IConfigurationRoot: Raiz de uma hierarquia. Interface de implementação.
+		IServiceCollection: Representa um contrato de uma coleção de serviços. (onde será adicionado os novos Middlewares).
+		IApplicationBuilder: prove mecanismos de configuração de um Middlewares. Configuração dos Middlewares.
+		ILoggerFactory: Configuração do logs do sistema.

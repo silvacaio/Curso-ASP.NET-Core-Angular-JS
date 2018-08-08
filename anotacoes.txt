@@ -23,7 +23,7 @@ __________________________________________
 
 __________________________________________
 
-4 Aula - Middleware : PAROU NOS 15:30
+4 Aula - Middleware : CONCLUIDA
 
 	Middlewares: manipulam dados entre os requests e responses (pipeline).
 	Owin (Open Web interface for .NET): Antigamente o .NET dependendia de uma plataforma (server, web host) para rodar (IIS).

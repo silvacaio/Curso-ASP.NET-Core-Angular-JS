@@ -1,0 +1,12 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.runtimeconfig.json
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.runtimeconfig.dev.json
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.csprojResolveAssemblyReference.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.AssemblyInfoInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.AssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.pdb

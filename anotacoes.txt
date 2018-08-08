@@ -29,6 +29,8 @@ __________________________________________
 	Owin (Open Web interface for .NET): Antigamente o .NET dependendia de uma plataforma (server, web host) para rodar (IIS).
 		 								Utiliza uma interface para comunicar estes dois componentes.
 
+	O novo  pipeline do .net core é uma coleção de Middleware. PLAY AS YO GO: só usar aquilo que é necessario e nada mais.
+
 	Interfaces utilizadas:
 		
 		IHostingEnvironment: Fornence informações sobre o ambiente de hospedagem.
@@ -36,3 +38,8 @@ __________________________________________
 		IServiceCollection: Representa um contrato de uma coleção de serviços. (onde será adicionado os novos Middlewares).
 		IApplicationBuilder: prove mecanismos de configuração de um Middlewares. Configuração dos Middlewares.
 		ILoggerFactory: Configuração do logs do sistema.
+
+		User secrets: forma de armazernar algum dado, que não seja visivel junto ao projeto.	
+
+		host: Forma como a aplicação irá rodar, como será a hospedagem. "Kestrel é o host da aplicação".
+		iis: é o servidor, onde irá rodar a aplicação.

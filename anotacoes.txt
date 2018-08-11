@@ -43,3 +43,65 @@ __________________________________________
 
 		host: Forma como a aplicação irá rodar, como será a hospedagem. "Kestrel é o host da aplicação".
 		iis: é o servidor, onde irá rodar a aplicação.
+
+5 Aula - MVC: CONCLUIDA
+
+		Padrão arquitetural: se encaixa em uma arquitetura existente.
+		Separação de responsabilidades.
+		Controller:
+			Rotas: estruturas de navegação.
+			Attribute Routes: atributo em cima do metodo na controller. Documentação oficial informa todos os tipos possiveis de parametros possiveis pra controller. 
+			Bind: filtra o que quer receber, recebe exatamente aquelas propriedades.
+			ActionName: Não é possivel ter duas "Actions" com o mesmo nome, por isso o ActionName simula isto. Exemplo: action Delete e DeleteConfirm (na DeleteConfirm adicionar uma ActionName("Delete"), possibilitando que seja chamado com o comando "Delete" na view) 
+			ValidateAntiForgeryToken: Valida que a página que fez o post é a mesma que solicitou a exclusão. 
+
+		Model: 
+			Representação de um modelo do mundo real ou DTO representa N modelos.
+			DataAnnotation: realizar validações no objeto. Criar DataAnnotation, validar de acordo com outros valores (ver documentação).
+			Para enviar mais de uma classe em um modelo, criar uma ViewModel com uma propriedade para cada classe.
+		
+		Views:
+			Razor: motor de renderização.
+			_ViewStart: definição do layout (qual viu faz o layout basico da aplicação).
+			_ViewImports: configuração do tag helper.
+			View Components: componentes para ser utilizado em qualquer view, possui requisições server side.
+
+
+6 Aula - Entity framework core: CONCLUIDA
+
+			Dentre todas as novidades é a mais imatura.
+			Possui um pacote para cada tipo do banco: oracle, sql... necessario fazer o install-package de cada pacote
+			Construtor do DbContext não recebe mais apenas a string de conexão, recebe um DbContextOptions
+			Necessario instalar as tools do Entity para poder utilizar os migrations 
+
+			update-database -script: mostrar o que será criado.
+			update-database -verbose: mostra a execução do script.
+
+7 Aula - Identity 3 e segurança: CONCLUIDA
+
+			Contexto do Identity deve ser único, tendo outro contexto para o sistema.
+			Não é recomendavel alterar o "ApplicationUser", outra tabela para os dados do personagem a utilizar o sistema.
+			Autenticação por terceiros (facebook): necessario instalar o pacote de autenticação "Authentication.Facebook) e setar no confire do Startup
+			Roles: Quem pode acessar. Deixa o sistema ingessado, pois uma nova autorização necessita uma costumização.
+			Claims: configurar na Startup "addAuthorization", adiciona uma politica. Fica na Cookie.
+
+8 Aaula - Ferramentas de front-end:
+
+			Node: desenvolvimento js no servidor.
+			NPM: Gerenciador de pacotes do Node. Um "Nuget" para arquivos js.
+			Bower: repositorio para pacotesm baseado no node. 
+			GRUNT: task runner do js. Para minificar arquivos após o build, publish...
+			Instalar node/ Utilizar o npm: add um arquivo json com o nome package e adicionar:
+																				"name": "asp.net",
+																				"private": true,
+																				"version": "1.0.0",
+																				"devDependencies": {
+
+																				}
+																				
+			Instalar yeoman: ajuda a criar aplicações, uma ferramenta de scaffolding
+			Instalar o generator do asp.net.
+			
+
+
+		

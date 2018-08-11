@@ -7,6 +7,6 @@ D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\ne
 D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.AssemblyInfoInputs.cache
 D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.AssemblyInfo.cs
 D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\bin\Debug\netcoreapp2.0\StartupDemo.pdb
-D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\StartupDemo.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\StartupDemo\StartupDemo\StartupDemo\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

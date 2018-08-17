@@ -85,7 +85,7 @@ __________________________________________
 			Roles: Quem pode acessar. Deixa o sistema ingessado, pois uma nova autorização necessita uma costumização.
 			Claims: configurar na Startup "addAuthorization", adiciona uma politica. Fica na Cookie.
 
-8 Aaula - Ferramentas de front-end:
+8 Aula - Ferramentas de front-end:CONCLUIDA
 
 			Node: desenvolvimento js no servidor.
 			NPM: Gerenciador de pacotes do Node. Um "Nuget" para arquivos js.
@@ -103,5 +103,13 @@ __________________________________________
 			Instalar o generator do asp.net.
 			
 
+9 Aula - iniciando a aplicação: CONCLUIDA
 
+	yo aspnet ou dotnet new
+	
+	Organização:
+		src: codigos do projeto/projetos de produção
+		testes: códigos de testes/projetos para testar o codigo de produção
+		docs: helpers
+		sql: arquivos de criação de banco, querys prontas
 		

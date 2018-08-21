@@ -114,7 +114,7 @@ __________________________________________
 		docs: helpers
 		sql: arquivos de criação de banco, querys prontas
 		
-10 Aula - Entidades e validações: 58min
+10 Aula - Entidades e validações: CONCLUIDA
 
 	DDD - abordagem de como desenvolver um software que seja de um nível complexo, como resolver estas complexidades. (Entidades, contratos de repositorio, domain services...)
 	Dominio - conjunto de responsabilidades que atendem a uma especificadade do negocio (uma camada para pagamento, um para vendas...)

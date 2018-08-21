@@ -2,7 +2,8 @@
 	ASP.NET Core:
 		Comandos .NET Cli: .dotnet -help
 		
-		Standar Library: Informa a possibilidade de convers�ao de aplica��es em dotnet framework para o dotnet core.
+		Standar Library: Compatibilidade entre as framework dotnet, Informa a possibilidade de convers�ao de aplica��es em dotnet framework para o dotnet core.
+						 API que tem o contrato de todas as funcionalidades, padrão. Surface API.
 
 __________________________________________
 
@@ -113,3 +114,30 @@ __________________________________________
 		docs: helpers
 		sql: arquivos de criação de banco, querys prontas
 		
+10 Aula - Entidades e validações: 58min
+
+	DDD - abordagem de como desenvolver um software que seja de um nível complexo, como resolver estas complexidades. (Entidades, contratos de repositorio, domain services...)
+	Dominio - conjunto de responsabilidades que atendem a uma especificadade do negocio (uma camada para pagamento, um para vendas...)
+	Apresentação: interface.
+	WebServices: meio de acesso a camada de aplicação, caso não exista comuninação direta (caso de um SPA).
+	Aplicação: Camada de negocio, orquesta as ações que serão executas no dominio (conversão de dados, conversão da viewmodel, fechamento de transação).
+	Infra: 
+			Persistencia de dados - repositorio, ORM...
+			CrossCutting - segurança, injeção de dependencia...
+			
+	Qual plataforma escolher?
+				Deploy além do WIN, docker? dotnet core.
+				Resescrita de uma aplicação full, convertendo para para dotnetcore? dotnet standart.
+				(Video a partir do min 22).
+				
+	SharedKernel: Domain base.
+				
+		Camada DOMAIN:
+			Models - pasta com o nome da cada entidade.
+			
+	Exception: custa caro, mexe com todo o windows (logs do windows).
+	A entidade tem que ser responsavel pelo proprio esta, ela tem que "se validar".
+				
+			
+	
+	

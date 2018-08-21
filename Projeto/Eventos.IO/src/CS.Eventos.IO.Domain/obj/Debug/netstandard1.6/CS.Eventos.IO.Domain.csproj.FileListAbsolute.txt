@@ -1,0 +1,4 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain\bin\Debug\netstandard1.6\CS.Eventos.IO.Domain.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.csprojResolveAssemblyReference.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.AssemblyInfo.cs

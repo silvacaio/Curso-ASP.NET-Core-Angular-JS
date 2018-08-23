@@ -137,6 +137,16 @@ __________________________________________
 			
 	Exception: custa caro, mexe com todo o windows (logs do windows).
 	A entidade tem que ser responsavel pelo proprio esta, ela tem que "se validar".
+	
+11 Aula - Implementando CQRS: 1:27
+	
+	Raiz de agregação: tudo que faz parte da mesma "regra de negocio" (Evento é "dono" de categoria, tags...)
+	CQRS: separar a responsabilidade de gravaçao da leitura. 
+	Evento de aplicação: algo que foi disparado por alguem (classe). 
+	EventSourcing: Salvar todos os eventos disparados. Guardar o estado de um registro durante todo o tempo de vida do registro na base.
+	Services: 
+	
+	UnityOfWork: valida se deve salvar ou não diversos comandos.
 				
 			
 	

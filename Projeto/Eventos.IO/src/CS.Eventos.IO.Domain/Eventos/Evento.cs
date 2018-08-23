@@ -1,9 +1,10 @@
 ﻿using CS.Eventos.IO.Domain.Core.Models;
+using CS.Eventos.IO.Domain.Organizadores;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
 
-namespace CS.Eventos.IO.Domain.Models
+namespace CS.Eventos.IO.Domain.Eventos
 {
     public class Evento : Entity<Evento>
     {
@@ -22,13 +23,7 @@ namespace CS.Eventos.IO.Domain.Models
             Gratuito = gratuito;
             Valor = valor;
             Online = online;
-            NomeEmpresa = nomeEmpresa;
-
-            if (nome.Length < 3)
-                throw new ArgumentException("O nome do evento deve ter mais de 3 caracteres.");
-
-            if (gratuito && valor != 0)
-                throw new ArgumentException("Não pode ter valor se gratuito.");
+            NomeEmpresa = nomeEmpresa;           
         }
 
         public string Nome { get; private set; }

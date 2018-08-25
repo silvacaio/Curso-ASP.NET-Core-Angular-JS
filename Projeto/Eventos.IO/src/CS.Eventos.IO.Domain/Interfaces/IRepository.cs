@@ -12,6 +12,7 @@ namespace CS.Eventos.IO.Domain.Interfaces
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);
         void Remove(TEntity obj);
+        void Remove(Guid id);
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
         int SaveChanges();
     }

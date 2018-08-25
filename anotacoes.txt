@@ -147,6 +147,7 @@ __________________________________________
 	Services: 
 	
 	UnityOfWork: valida se deve salvar ou não diversos comandos.
+	BUS: Um canal para disparar comandos e eventos.
 				
 			
 	

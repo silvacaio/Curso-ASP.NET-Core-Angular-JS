@@ -8,6 +8,8 @@ namespace CS.Eventos.IO.Domain.Eventos
 {
     public class Evento : Entity<Evento>
     {
+        private Evento() { }
+
         public Evento(string nome,
                       DateTime dataInicio,
                       DateTime dateFinal,
@@ -23,7 +25,7 @@ namespace CS.Eventos.IO.Domain.Eventos
             Gratuito = gratuito;
             Valor = valor;
             Online = online;
-            NomeEmpresa = nomeEmpresa;           
+            NomeEmpresa = nomeEmpresa;
         }
 
         public string Nome { get; private set; }
@@ -73,7 +75,7 @@ namespace CS.Eventos.IO.Domain.Eventos
 
             if (Gratuito)
                 RuleFor(c => c.Valor)
-                    .ExclusiveBetween(0, 0).When(a => a.Gratuito)
+                    .Equal(0).When(a => a.Gratuito)
                     .WithMessage(Resources.Evento.Erros.VALOR_GRATUITO);
         }
 
@@ -102,6 +104,40 @@ namespace CS.Eventos.IO.Domain.Eventos
         }
 
         //valida Nome empresa
+
+        #endregion
+
+        public static class EventoFactory
+        {
+            public static Evento NovoEventoCompleto(
+                      Guid id,
+                      string nome,
+                      DateTime dataInicio,
+                      DateTime dateFinal,
+                      bool gratuito,
+                      decimal valor,
+                      bool online,
+                      string nomeEmpresa,
+                      Guid? OrganizadorId)
+            {
+                var evento = new Evento();
+                evento.Id = id;
+                evento.Nome = nome;
+                evento.DataInicio = dataInicio;
+                evento.DateFinal = dateFinal;
+                evento.Gratuito = gratuito;
+                evento.Valor = valor;
+                evento.Online = online;
+                evento.NomeEmpresa = nomeEmpresa;
+
+                if (OrganizadorId != null)
+                    evento.Organizador = new Organizador(OrganizadorId.Value);
+
+                return evento;
+            }
+        }
+
+        #region MyRegion
 
         #endregion
     }

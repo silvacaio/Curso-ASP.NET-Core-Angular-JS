@@ -5,3 +5,4 @@ D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain.Core
 D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.Core.AssemblyInfo.cs
 D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.Core.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.Core.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\CS.Eventos.IO.Domain.Core.csprojResolveAssemblyReference.cache

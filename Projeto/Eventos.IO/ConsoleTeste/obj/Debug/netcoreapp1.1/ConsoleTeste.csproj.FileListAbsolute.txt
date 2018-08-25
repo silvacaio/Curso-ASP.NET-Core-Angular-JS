@@ -1,0 +1,14 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\ConsoleTeste.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\ConsoleTeste.runtimeconfig.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\ConsoleTeste.runtimeconfig.dev.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\ConsoleTeste.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\ConsoleTeste.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\CS.Eventos.IO.Domain.Core.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\CS.Eventos.IO.Domain.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\CS.Eventos.IO.Domain.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\bin\Debug\netcoreapp1.1\CS.Eventos.IO.Domain.Core.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\obj\Debug\netcoreapp1.1\ConsoleTeste.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\obj\Debug\netcoreapp1.1\ConsoleTeste.AssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\obj\Debug\netcoreapp1.1\ConsoleTeste.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\obj\Debug\netcoreapp1.1\ConsoleTeste.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Projeto\Eventos.IO\ConsoleTeste\obj\Debug\netcoreapp1.1\ConsoleTeste.csprojResolveAssemblyReference.cache

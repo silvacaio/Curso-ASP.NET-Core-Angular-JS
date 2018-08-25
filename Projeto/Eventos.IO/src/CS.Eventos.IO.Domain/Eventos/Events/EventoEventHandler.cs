@@ -1,7 +1,7 @@
 ﻿using CS.Eventos.IO.Domain.Core.Events;
 using CS.Eventos.IO.Domain.Eventos.Events;
 
-namespace CS.Eventos.IO.Domain.Eventos.EventHandlers
+namespace CS.Eventos.IO.Domain.Eventos.Events
 {
     public class EventoEventHandler :
         IHandler<EventoRegistradoEvent>,
@@ -12,18 +12,25 @@ namespace CS.Eventos.IO.Domain.Eventos.EventHandlers
         {
             //enviar e-mail
             //registrar log
+
+            System.Console.ForegroundColor = System.ConsoleColor.Green;
+            System.Console.WriteLine("Comando registrado.");
         }
 
         public void Handle(EventoAtualizadoEvent message)
         {
             //enviar e-mail
             //registrar log
+            System.Console.ForegroundColor = System.ConsoleColor.Green;
+            System.Console.WriteLine("Comando atualizado.");
         }
 
         public void Handle(EventoRemovidoEvent message)
         {
             //enviar e-mail
             //registrar log
+            System.Console.ForegroundColor = System.ConsoleColor.Green;
+            System.Console.WriteLine("Comando removido.");
         }
     }
 }

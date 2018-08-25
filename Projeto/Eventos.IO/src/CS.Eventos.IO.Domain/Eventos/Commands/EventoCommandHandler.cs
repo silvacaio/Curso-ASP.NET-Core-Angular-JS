@@ -30,7 +30,18 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
         public void Handle(RegistrarEventoCommand message)
         {
-            var evento = new Evento(message.Nome, message.DataInicio, message.DateFinal, message.Gratuito, message.Valor, message.Online, message.NomeEmpresa);
+            var evento = EventoFactory.NovoEventoCompleto(message.Id, //Precisa???
+                                                        message.Nome,
+                                                        message.DataInicio,
+                                                        message.DateFinal,
+                                                        message.Gratuito,
+                                                        message.Valor,
+                                                        message.Online,
+                                                        message.NomeEmpresa,
+                                                        message.OrganizadorId,
+                                                        message.Endereco,
+                                                        message.Categoria.Id);
+
             if (!EventoValido(evento)) return;
 
             // TODO: 
@@ -39,7 +50,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
             //Organizador pode registrar o evento?
 
             //Persistencia
-            _eventoRepository.Add(evento);
+            _eventoRepository.Adicionar(evento);
 
             if (Commit())
             {
@@ -60,7 +71,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
         public void Handle(RemoverEventoCommand message)
         {
             if (!EventoExistente(message.Id, message.MessageType)) return;
-            _eventoRepository.Remove(message.Id);
+            _eventoRepository.Remover(message.Id);
 
             if (Commit())
                 _bus.RaiseEvent(new EventoRemovidoEvent(message.Id));
@@ -69,7 +80,12 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
         public void Handle(AtualizarEventoCommand message)
         {
+            //TODO: Obter duas vezes o evento????????
             if (!EventoExistente(message.Id, message.MessageType)) return;
+
+            var eventoAtual = _eventoRepository.ObterPorId(message.Id);
+
+            //TODO: validar se o evento pertence a pessoa que está  editando
 
             var evento = EventoFactory.NovoEventoCompleto(message.Id,
                                                           message.Nome,
@@ -79,11 +95,13 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                                                           message.Valor,
                                                           message.Online,
                                                           message.NomeEmpresa,
-                                                          null);
+                                                          message.OrganizadorId,
+                                                          eventoAtual.Endereco,
+                                                          message.Categoria.Id);
 
             if (!EventoValido(evento)) return;
 
-            _eventoRepository.Update(evento);
+            _eventoRepository.Atualizar(evento);
 
             if (Commit())
             {
@@ -112,7 +130,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
         private bool EventoExistente(Guid id, string messageType)
         {
-            var evento = _eventoRepository.GetById(id);
+            var evento = _eventoRepository.ObterPorId(id);
             if (evento != null) return true;
 
             _bus.RaiseEvent(new DomainNotification(messageType, "Evento não encontrado"));

@@ -8,7 +8,7 @@ namespace CS.Eventos.IO.Domain.Eventos
 {
     public class Evento : Entity<Evento>
     {
-        private Evento() { }
+        protected Evento() { }
 
         public Evento(string nome,
                       DateTime dataInicio,
@@ -37,10 +37,40 @@ namespace CS.Eventos.IO.Domain.Eventos
         public decimal Valor { get; private set; }
         public bool Online { get; private set; }
         public string NomeEmpresa { get; private set; }
-        public Categoria Categoria { get; private set; }
+        public bool Excluido { get; private set; }
         public ICollection<Tags> Tags { get; private set; }
-        public Endereco Endereco { get; private set; }
-        public Organizador Organizador { get; private set; }
+
+        public Guid? CategoriaId { get; private set; }
+        public Guid? EnderecoId { get; private set; }
+        public Guid OrganizadorId { get; private set; }
+
+        //EF propriedades de navegação
+        public virtual Categoria Categoria { get; private set; }
+        public virtual Endereco Endereco { get; private set; }
+        public virtual Organizador Organizador { get; private set; }
+
+        #region AD-HOC setters
+        public void AtributirEndereco(Endereco endereco)
+        {
+            if (!endereco.EhValido()) return;
+
+            Endereco = endereco;
+        }
+
+        public void AtributirCategoria(Categoria categoria)
+        {
+            if (!categoria.EhValido()) return;
+
+            Categoria = categoria;
+        }
+
+        public void ExcluirEvento()
+        {
+            //TODO: deve validar alguma  regra?
+            Excluido = true;
+        }
+
+        #endregion
 
         public override bool EhValido()
         {
@@ -57,6 +87,9 @@ namespace CS.Eventos.IO.Domain.Eventos
             ValidarLocal();
 
             ValidationResult = Validate(this);
+
+            //Validacões adicionais
+            ValidarEndereco();
         }
 
         private void ValidarNome()
@@ -103,6 +136,17 @@ namespace CS.Eventos.IO.Domain.Eventos
                 .WithMessage(Resources.Evento.Erros.ONLINE_COM_ENDERECO);
         }
 
+        private void ValidarEndereco()
+        {
+            if (Online) return;
+            if (Endereco.EhValido()) return;
+
+            foreach (var error in Endereco.ValidationResult.Errors)
+            {
+                ValidationResult.Errors.Add(error);
+            }
+        }
+
         //valida Nome empresa
 
         #endregion
@@ -118,20 +162,29 @@ namespace CS.Eventos.IO.Domain.Eventos
                       decimal valor,
                       bool online,
                       string nomeEmpresa,
-                      Guid? OrganizadorId)
+                      Guid? OrganizadorId,
+                      Endereco endereco,
+                      Guid categoriaId)
             {
-                var evento = new Evento();
-                evento.Id = id;
-                evento.Nome = nome;
-                evento.DataInicio = dataInicio;
-                evento.DateFinal = dateFinal;
-                evento.Gratuito = gratuito;
-                evento.Valor = valor;
-                evento.Online = online;
-                evento.NomeEmpresa = nomeEmpresa;
+                var evento = new Evento
+                {
+                    Id = id,
+                    Nome = nome,
+                    DataInicio = dataInicio,
+                    DateFinal = dateFinal,
+                    Gratuito = gratuito,
+                    Valor = valor,
+                    Online = online,
+                    NomeEmpresa = nomeEmpresa
+                };
 
                 if (OrganizadorId != null)
                     evento.Organizador = new Organizador(OrganizadorId.Value);
+
+                if (!online)
+                    evento.Endereco = endereco;
+
+                evento.CategoriaId = categoriaId;
 
                 return evento;
             }

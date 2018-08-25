@@ -138,7 +138,7 @@ __________________________________________
 	Exception: custa caro, mexe com todo o windows (logs do windows).
 	A entidade tem que ser responsavel pelo proprio esta, ela tem que "se validar".
 	
-11 Aula - Implementando CQRS: 1:27
+11 Aula - Implementando CQRS: CONCLUIDA
 	
 	Raiz de agregação: tudo que faz parte da mesma "regra de negocio" (Evento é "dono" de categoria, tags...)
 	CQRS: separar a responsabilidade de gravaçao da leitura. 
@@ -148,6 +148,10 @@ __________________________________________
 	
 	UnityOfWork: valida se deve salvar ou não diversos comandos.
 	BUS: Um canal para disparar comandos e eventos.
+	
+12 Aula - Tornando o domínio mapeavel para o banco de dados: CONCLUIDA
+
+		Agregação: duas entidades independentes mas que uma só existe por causa da outra (agregação). A agregação deve tratar tudo das filhas.
 				
 			
 	

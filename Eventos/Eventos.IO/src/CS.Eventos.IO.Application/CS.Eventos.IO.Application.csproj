@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="7.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Eventos.IO.Domain.Core\CS.Eventos.IO.Domain.Core.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Domain\CS.Eventos.IO.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

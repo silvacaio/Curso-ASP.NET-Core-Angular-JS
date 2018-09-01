@@ -4,7 +4,6 @@ using CS.Eventos.IO.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
-using CS.Eventos.IO.Infra.Data.Extensions;
 
 namespace CS.Eventos.IO.Infra.Data.Context
 {
@@ -17,10 +16,10 @@ namespace CS.Eventos.IO.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.AddConfiguration(new EventoMapping());
-            modelBuilder.AddConfiguration(new EnderecoMapping());
-            modelBuilder.AddConfiguration(new CategoriaMapping());
-            modelBuilder.AddConfiguration(new OrganizadorMapping());
+            modelBuilder.ApplyConfiguration(new EventoMapping());
+            modelBuilder.ApplyConfiguration(new EnderecoMapping());
+            modelBuilder.ApplyConfiguration(new CategoriaMapping());
+            modelBuilder.ApplyConfiguration(new OrganizadorMapping());
 
             base.OnModelCreating(modelBuilder);
         }

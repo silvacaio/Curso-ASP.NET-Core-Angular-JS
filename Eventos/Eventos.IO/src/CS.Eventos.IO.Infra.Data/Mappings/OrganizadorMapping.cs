@@ -1,17 +1,16 @@
 ﻿using CS.Eventos.IO.Domain.Organizadores;
-using CS.Eventos.IO.Infra.Data.Extensions;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
 namespace CS.Eventos.IO.Infra.Data.Mappings
 {
-    public class OrganizadorMapping : EntityTypeConfiguration<Organizador>
+    public class OrganizadorMapping : IEntityTypeConfiguration<Organizador>
     {
-        public override void Map(EntityTypeBuilder<Organizador> builder)
+        public void Configure(EntityTypeBuilder<Organizador> builder)
         {
             builder.Property(e => e.Nome)
-                 .HasColumnType("varchar(150)")
-                 .IsRequired();
+                  .HasColumnType("varchar(150)")
+                  .IsRequired();
 
             builder.Property(e => e.Email)
                  .HasColumnType("varchar(100)")

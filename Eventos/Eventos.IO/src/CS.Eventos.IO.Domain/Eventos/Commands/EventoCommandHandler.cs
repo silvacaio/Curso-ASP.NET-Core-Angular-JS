@@ -30,7 +30,8 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
         public void Handle(RegistrarEventoCommand message)
         {
-            var evento = EventoFactory.NovoEventoCompleto(message.Id, //Precisa???
+            var endereco = new Endereco(message.Endereco.Id, message.Endereco.Logradouro, message.Endereco.Numero, message.Endereco.Complemento, message.Endereco.Bairro, message.Endereco.CEP, message.Endereco.Cidade, message.Endereco.Estado, message.Endereco.EventoId);
+            var evento = EventoFactory.NovoEventoCompleto(message.Id, //TODO Precisa???
                                                         message.Nome,
                                                         message.DataInicio,
                                                         message.DateFinal,
@@ -39,8 +40,8 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                                                         message.Online,
                                                         message.NomeEmpresa,
                                                         message.OrganizadorId,
-                                                        message.Endereco,
-                                                        message.Categoria.Id);
+                                                        endereco,
+                                                        message.CategoriaId);
 
             if (!EventoValido(evento)) return;
 
@@ -97,7 +98,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                                                           message.NomeEmpresa,
                                                           message.OrganizadorId,
                                                           eventoAtual.Endereco,
-                                                          message.Categoria.Id);
+                                                          message.CategoriaId);
 
             if (!EventoValido(evento)) return;
 

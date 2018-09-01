@@ -146,7 +146,7 @@ __________________________________________
 	EventSourcing: Salvar todos os eventos disparados. Guardar o estado de um registro durante todo o tempo de vida do registro na base.
 	Services: 
 	
-	UnityOfWork: valida se deve salvar ou não diversos comandos.
+	UnitOfWork: valida se deve salvar ou não diversos comandos.
 	BUS: Um canal para disparar comandos e eventos.
 	
 12 Aula - Tornando o domínio mapeavel para o banco de dados: CONCLUIDA
@@ -155,6 +155,12 @@ __________________________________________
 		
 13 - Criando a camada de Dados: Finalizado
 		O projeto foi alterado para o dotnet core 2.1.
+		
+14 - Criando a camada de Aplicação:
+		Um SPA pode substituir a camada de aplication, pois ele esta esta responsavel por montar e interpretrar viewmodel
+		
+		Depende dos casos de uso: como que o front end vai fazer.
+		Dapper para consultas!!!
 			
 	
 	

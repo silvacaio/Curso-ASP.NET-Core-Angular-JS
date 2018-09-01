@@ -1,17 +1,16 @@
 ﻿using CS.Eventos.IO.Domain.Eventos;
-using CS.Eventos.IO.Infra.Data.Extensions;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
 namespace CS.Eventos.IO.Infra.Data.Mappings
 {
-    public class EventoMapping : EntityTypeConfiguration<Evento>
+    public class EventoMapping : IEntityTypeConfiguration<Evento>
     {
-        public override void Map(EntityTypeBuilder<Evento> builder)
+        public void Configure(EntityTypeBuilder<Evento> builder)
         {
             builder.Property(e => e.Nome)
-                .HasColumnType("varchar(150)")
-                .IsRequired();
+               .HasColumnType("varchar(150)")
+               .IsRequired();
 
             builder.Property(e => e.DescricaoCurta)
                 .HasColumnType("varchar(150)");

@@ -14,11 +14,13 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                     bool gratuito,
                     decimal valor,
                     bool online,
-                    string nomeEmpresa)
+                    string nomeEmpresa,
+                    Guid organizadorId,
+                    Guid categoriaId)
         {
             Id = id;
             DescricaoLonga = descLonga;
-            DescricaoCurta = descCurta ;
+            DescricaoCurta = descCurta;
             Nome = nome;
             DataInicio = dataInicio;
             DateFinal = dateFinal;
@@ -26,6 +28,8 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
             Valor = valor;
             Online = online;
             NomeEmpresa = nomeEmpresa;
+            OrganizadorId = organizadorId;
+            CategoriaId = categoriaId;
         }
 
     }

@@ -136,7 +136,7 @@ __________________________________________
 			Models - pasta com o nome da cada entidade.
 			
 	Exception: custa caro, mexe com todo o windows (logs do windows).
-	A entidade tem que ser responsavel pelo proprio esta, ela tem que "se validar".
+	*-*/-/A entidade tem que ser responsavel pelo proprio esta, ela tem que "se validar".
 	
 11 Aula - Implementando CQRS: CONCLUIDA
 	
@@ -152,7 +152,10 @@ __________________________________________
 12 Aula - Tornando o domínio mapeavel para o banco de dados: CONCLUIDA
 
 		Agregação: duas entidades independentes mas que uma só existe por causa da outra (agregação). A agregação deve tratar tudo das filhas.
-				
+		
+13 - Criando a camada de Dados: Finalizado
+		O projeto foi alterado para o dotnet core 2.1.
 			
+	
 	
 	

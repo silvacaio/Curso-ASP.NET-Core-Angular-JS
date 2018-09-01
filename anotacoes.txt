@@ -156,11 +156,14 @@ __________________________________________
 13 - Criando a camada de Dados: Finalizado
 		O projeto foi alterado para o dotnet core 2.1.
 		
-14 - Criando a camada de Aplicação:
+14 - Criando a camada de Aplicação: CONCLUIDA
 		Um SPA pode substituir a camada de aplication, pois ele esta esta responsavel por montar e interpretrar viewmodel
 		
 		Depende dos casos de uso: como que o front end vai fazer.
 		Dapper para consultas!!!
+		
+15 - Desenvolvendo o projeto MVC 54min
+		ATUALIZAR A VERSÃO DO CORE: VER ATRAVÉS DO DOTNET --INFO A VERSO FERRAMENTAL UTILIZADA, COLOCAR ESSA VERSÃO NO GLOBAL.JSON. ABRIR O NUGET E VER AS ATUALIZAÇÕES DISPONIVEIS PARA A SLN
 			
 	
 	

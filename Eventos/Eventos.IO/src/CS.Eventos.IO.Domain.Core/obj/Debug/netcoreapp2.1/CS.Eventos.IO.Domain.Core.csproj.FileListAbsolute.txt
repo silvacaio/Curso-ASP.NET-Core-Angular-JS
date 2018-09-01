@@ -1,9 +1,9 @@
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.csproj.CoreCompileInputs.cache
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.AssemblyInfoInputs.cache
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.AssemblyInfo.cs
-D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.csprojAssemblyReference.cache
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.deps.json
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.pdb
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.csprojAssemblyReference.cache

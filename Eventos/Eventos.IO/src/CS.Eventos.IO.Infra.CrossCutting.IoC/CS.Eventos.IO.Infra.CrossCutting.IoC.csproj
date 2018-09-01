@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Eventos.IO.Application\CS.Eventos.IO.Application.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Domain\CS.Eventos.IO.Domain.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.Data\CS.Eventos.IO.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

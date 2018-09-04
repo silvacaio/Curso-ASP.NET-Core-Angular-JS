@@ -16,3 +16,5 @@ D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.Cross
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.IoC\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.IoC.csproj.CopyComplete
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.IoC\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.IoC.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.IoC\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.IoC.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.IoC\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.pdb

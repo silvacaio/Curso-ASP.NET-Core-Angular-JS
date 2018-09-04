@@ -162,8 +162,14 @@ __________________________________________
 		Depende dos casos de uso: como que o front end vai fazer.
 		Dapper para consultas!!!
 		
-15 - Desenvolvendo o projeto MVC 54min
+15 - Desenvolvendo o projeto MVC : CONCLUIDA
 		ATUALIZAR A VERSÃO DO CORE: VER ATRAVÉS DO DOTNET --INFO A VERSO FERRAMENTAL UTILIZADA, COLOCAR ESSA VERSÃO NO GLOBAL.JSON. ABRIR O NUGET E VER AS ATUALIZAÇÕES DISPONIVEIS PARA A SLN
+		
+		Bus: Responsavel pelo enfileiramento.
+		
+		54min: fala sobre o BUS
+		IServiceProvider: //Metodo de acesso ao container de injeção de dependencia 
+		Consistencia eventual: memory bus com fila.
 			
 	
 	

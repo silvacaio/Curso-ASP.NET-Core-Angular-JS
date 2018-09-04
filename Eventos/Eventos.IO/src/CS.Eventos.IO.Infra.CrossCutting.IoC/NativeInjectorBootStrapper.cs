@@ -8,9 +8,11 @@ using CS.Eventos.IO.Domain.Eventos.Commands;
 using CS.Eventos.IO.Domain.Eventos.Events;
 using CS.Eventos.IO.Domain.Eventos.Repository;
 using CS.Eventos.IO.Domain.Interfaces;
+using CS.Eventos.IO.Infra.CrossCutting.Bus;
 using CS.Eventos.IO.Infra.Data.Context;
 using CS.Eventos.IO.Infra.Data.Repository;
 using CS.Eventos.IO.Infra.Data.UoW;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CS.Eventos.IO.Infra.CrossCutting.IoC
@@ -21,8 +23,9 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
         {
             //Application
             services.AddScoped<IEventoAppService, EventoAppService>();
-            services.AddSingleton(Mapper.Configuration);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetServices));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+           // services.AddSingleton(Mapper.Configuration);
+           // services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetServices));
 
             //Domain - Commands
             services.AddScoped<IHandler<RegistrarEventoCommand>, EventoCommandHandler>();
@@ -41,7 +44,7 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<EventosContext>();
 
             //Infra - Bus
-            //services.AddScoped<IBus, InMemoryBus>();
+            services.AddScoped<IBus, InMemoryBus>();
         }
     }
 }

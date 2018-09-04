@@ -24,7 +24,9 @@ namespace CS.Eventos.IO.Application.ViewModels
         {
             return new List<CategoriaViewModel>()
             {
-                new CategoriaViewModel() { Id =Guid.NewGuid(), Nome= "Teste" }
+                new CategoriaViewModel() { Id =Guid.NewGuid(), Nome= "Teste" },
+                new CategoriaViewModel() { Id =Guid.NewGuid(), Nome= "Teste1" },
+                new CategoriaViewModel() { Id =Guid.NewGuid(), Nome= "Teste2" }
             };
         }
     }

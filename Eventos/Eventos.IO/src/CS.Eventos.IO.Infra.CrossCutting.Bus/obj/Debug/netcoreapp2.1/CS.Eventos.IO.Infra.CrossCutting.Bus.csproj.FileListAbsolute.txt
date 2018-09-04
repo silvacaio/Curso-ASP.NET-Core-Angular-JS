@@ -1,0 +1,12 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.csprojAssemblyReference.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.AssemblyInfoInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.AssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.csproj.CopyComplete
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.Bus\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.Bus.pdb

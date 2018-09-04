@@ -6,12 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CS.Eventos.IO.Application\CS.Eventos.IO.Application.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.Bus\CS.Eventos.IO.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.IoC\CS.Eventos.IO.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 
 </Project>

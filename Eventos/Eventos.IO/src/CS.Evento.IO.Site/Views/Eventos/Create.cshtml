@@ -24,8 +24,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="DescricaoLonga" class="control-label"></label>
-                <input asp-for="DescricaoLonga" class="form-control" />
+                <textarea asp-for="DescricaoLonga" class="form-control" rows="5"></textarea>
                 <span asp-validation-for="DescricaoLonga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+              @Html.PartialAsync("_Categorias")
+                <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
@@ -60,15 +65,6 @@
                 <label asp-for="NomeEmpresa" class="control-label"></label>
                 <input asp-for="NomeEmpresa" class="form-control" />
                 <span asp-validation-for="NomeEmpresa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoriaId" class="control-label"></label>
-                <select asp-for="CategoriaId" class ="form-control" asp-items="ViewBag.CategoriaId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrganizadorId" class="control-label"></label>
-                <input asp-for="OrganizadorId" class="form-control" />
-                <span asp-validation-for="OrganizadorId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CS.Evento.IO.Site.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using CS.Eventos.IO.Application.Interfaces;
-using CS.Eventos.IO.Application.Services;
+using CS.Eventos.IO.Infra.CrossCutting.Bus;
+using CS.Eventos.IO.Infra.CrossCutting.IoC;
+using AutoMapper;
 
 namespace CS.Evento.IO.Site
 {
@@ -42,11 +38,14 @@ namespace CS.Evento.IO.Site
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);         
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddAutoMapper(typeof(Startup));
+
+            RegisterServices(services);           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IHttpContextAccessor contextAccessor)
         {
             if (env.IsDevelopment())
             {
@@ -71,6 +70,13 @@ namespace CS.Evento.IO.Site
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            InMemoryBus.ContainerAccessor = () => contextAccessor.HttpContext.RequestServices;            
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            NativeInjectorBootStrapper.RegisterServices(services);
         }
     }
 }

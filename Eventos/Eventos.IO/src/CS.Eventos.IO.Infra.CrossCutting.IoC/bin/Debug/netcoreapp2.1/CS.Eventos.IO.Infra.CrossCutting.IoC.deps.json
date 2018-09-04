@@ -10,6 +10,7 @@
         "dependencies": {
           "CS.Eventos.IO.Application": "1.0.0",
           "CS.Eventos.IO.Domain": "1.0.0",
+          "CS.Eventos.IO.Infra.CrossCutting.Bus": "1.0.0",
           "CS.Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.1"
         },
@@ -2251,6 +2252,14 @@
           "CS.Eventos.IO.Domain.Core.dll": {}
         }
       },
+      "CS.Eventos.IO.Infra.CrossCutting.Bus/1.0.0": {
+        "dependencies": {
+          "CS.Eventos.IO.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "CS.Eventos.IO.Infra.CrossCutting.Bus.dll": {}
+        }
+      },
       "CS.Eventos.IO.Infra.Data/1.0.0": {
         "dependencies": {
           "CS.Eventos.IO.Domain": "1.0.0",
@@ -3650,6 +3659,11 @@
       "sha512": ""
     },
     "CS.Eventos.IO.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CS.Eventos.IO.Infra.CrossCutting.Bus/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

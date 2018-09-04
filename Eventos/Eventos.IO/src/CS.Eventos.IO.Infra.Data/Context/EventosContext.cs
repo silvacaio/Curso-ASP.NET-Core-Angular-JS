@@ -4,6 +4,7 @@ using CS.Eventos.IO.Infra.Data.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.Linq;
 
 namespace CS.Eventos.IO.Infra.Data.Context
 {
@@ -21,6 +22,8 @@ namespace CS.Eventos.IO.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new CategoriaMapping());
             modelBuilder.ApplyConfiguration(new OrganizadorMapping());
 
+            RemoveConventions(modelBuilder);
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -31,10 +34,25 @@ namespace CS.Eventos.IO.Infra.Data.Context
                 .AddJsonFile("appsettings.json")
                 .Build();
 
+            
+
             // optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EventosIODEMO;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+        }
 
+        private void RemoveConventions(ModelBuilder modelBuilder)
+        {
+            #region Remove convention cascade delete
 
+            var cascadeFKs = modelBuilder.Model
+                .GetEntityTypes()
+                .SelectMany(t => t.GetForeignKeys())
+                .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in cascadeFKs)
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+            #endregion
         }
     }
 }

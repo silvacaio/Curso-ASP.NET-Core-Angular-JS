@@ -39,7 +39,9 @@ namespace CS.Evento.IO.Site
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper();
+            //services.AddAutoMapper(typeof(Startup));
+          //  Eventos.IO.Application.AutoMapper.AutoMapperConfiguration.RegisterMappings();
 
             RegisterServices(services);           
         }

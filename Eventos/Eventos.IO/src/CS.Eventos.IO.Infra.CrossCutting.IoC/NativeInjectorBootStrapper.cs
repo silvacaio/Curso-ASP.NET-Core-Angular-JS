@@ -15,6 +15,7 @@ using CS.Eventos.IO.Infra.Data.UoW;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace CS.Eventos.IO.Infra.CrossCutting.IoC
 {
     public class NativeInjectorBootStrapper
@@ -24,8 +25,8 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
             //Application
             services.AddScoped<IEventoAppService, EventoAppService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           // services.AddSingleton(Mapper.Configuration);
-           // services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetServices));
+            //services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
 
             //Domain - Commands
             services.AddScoped<IHandler<RegistrarEventoCommand>, EventoCommandHandler>();

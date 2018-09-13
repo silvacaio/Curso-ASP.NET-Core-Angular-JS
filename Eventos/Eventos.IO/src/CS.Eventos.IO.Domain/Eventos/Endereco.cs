@@ -37,8 +37,8 @@ namespace CS.Eventos.IO.Domain.Eventos
         public override bool EhValido()
         {
             RuleFor(e => e.Logradouro)
-                .NotEmpty().WithMessage("")
-                .Length(2, 150).WithMessage("");  //TODO: mensagens de erro
+                .NotEmpty().WithMessage("Endereço obrigatorio")
+                .Length(2, 150).WithMessage("Endereço obrigatorio");  //TODO: mensagens de erro
 
             //TODO: Adicionar validações do endereço
 

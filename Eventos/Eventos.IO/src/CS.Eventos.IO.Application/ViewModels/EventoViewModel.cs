@@ -28,19 +28,25 @@ namespace CS.Eventos.IO.Application.ViewModels
         public string DescricaoLonga { get; set; }
 
         [Display(Name = "Inicio do evento")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Data é requerida")]
+        [DataType(DataType.Text)]
+        //[DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataInicio { get; set; }
 
         [Display(Name = "Fim do evento")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Data é requerida")]
+        [DataType(DataType.Text)]
+        //[DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateFinal { get; set; }
 
         [Display(Name = "Será gratuito?")]
         public bool Gratuito { get; set; }
 
         [Display(Name = "Valor")]
+        [DataType(DataType.Currency, ErrorMessage = "Moeda em formato inválido")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Valor { get; set; }
 
         [Display(Name = "Será Online?")]
@@ -48,13 +54,13 @@ namespace CS.Eventos.IO.Application.ViewModels
 
         [Display(Name = "Empresa")]
         public string NomeEmpresa { get; set; }
-        
+
         public EnderecoViewModel Endereco { get; set; }
 
         public CategoriaViewModel Categoria { get; set; }
 
         public Guid CategoriaId { get; set; }
         public Guid OrganizadorId { get; set; }
-        
+
     }
 }

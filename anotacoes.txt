@@ -171,6 +171,14 @@ __________________________________________
 		IServiceProvider: //Metodo de acesso ao container de injeção de dependencia 
 		Consistencia eventual: memory bus com fila.
 			
-	
+16 - Complementando as funcionalidades de Apresentação: 1:48
+		
+		-Quando se confia MUITO em uma ferramenta, ela acaba regendo a aplicação. E isso não é saudavel.
+		Dapper (Micro ORM): mapeador simples de objetos.
+		
+
+		ViewComponente: As notificações ficam no "Request"
+		
+@section Scripts : só sera executado apos os scripts das paginas pais serem carregados.
 	
 	

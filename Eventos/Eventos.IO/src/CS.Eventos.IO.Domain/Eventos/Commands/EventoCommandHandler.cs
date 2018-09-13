@@ -55,8 +55,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
             if (Commit())
             {
-                //Notificar processo concluido
-                Console.WriteLine("Evento registro com sucesso.");
+                //Notificar processo concluido               
                 _bus.RaiseEvent(new EventoRegistradoEvent(
                                         evento.Id,
                                         evento.Nome,

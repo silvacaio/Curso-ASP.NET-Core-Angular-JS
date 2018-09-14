@@ -8,6 +8,9 @@ using CS.Eventos.IO.Domain.Eventos.Commands;
 using CS.Eventos.IO.Domain.Eventos.Events;
 using CS.Eventos.IO.Domain.Eventos.Repository;
 using CS.Eventos.IO.Domain.Interfaces;
+using CS.Eventos.IO.Domain.Organizadores.Commands;
+using CS.Eventos.IO.Domain.Organizadores.Events;
+using CS.Eventos.IO.Domain.Organizadores.Repository;
 using CS.Eventos.IO.Infra.CrossCutting.Bus;
 using CS.Eventos.IO.Infra.Data.Context;
 using CS.Eventos.IO.Infra.Data.Repository;
@@ -22,8 +25,11 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+
+
             //Application
             services.AddScoped<IEventoAppService, EventoAppService>();
+            services.AddScoped<IOrganizadorAppService, OrganizadorAppService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService));
@@ -32,15 +38,18 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<RegistrarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<AtualizarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<RemoverEventoCommand>, EventoCommandHandler>();
+            services.AddScoped<IHandler<RegistrarOrganizadorCommand>, OrganizadorCommandHandler>();
 
             //Domain - Events
             services.AddScoped<IDomainNotificationHandler<DomainNotification>, DomainNotificationHandler>();
             services.AddScoped<IHandler<EventoRegistradoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoAtualizadoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoRemovidoEvent>, EventoEventHandler>();
+            services.AddScoped<IHandler<OrganizadorRegistradoEvent>, OrganizadorEventHandler>();
 
             //Infra - Data
             services.AddScoped<IEventoRepository, EventoRepository>();
+            services.AddScoped<IOrganizadorRepository, OrganizadorRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<EventosContext>();
 

@@ -153,7 +153,7 @@ __________________________________________
 
 		Agregação: duas entidades independentes mas que uma só existe por causa da outra (agregação). A agregação deve tratar tudo das filhas.
 		
-13 - Criando a camada de Dados: Finalizado
+13 - Criando a camada de Dados: CONCLUIDA
 		O projeto foi alterado para o dotnet core 2.1.
 		
 14 - Criando a camada de Aplicação: CONCLUIDA
@@ -171,7 +171,7 @@ __________________________________________
 		IServiceProvider: //Metodo de acesso ao container de injeção de dependencia 
 		Consistencia eventual: memory bus com fila.
 			
-16 - Complementando as funcionalidades de Apresentação: 1:48
+16 - Complementando as funcionalidades de Apresentação: CONCLUIDA
 		
 		-Quando se confia MUITO em uma ferramenta, ela acaba regendo a aplicação. E isso não é saudavel.
 		Dapper (Micro ORM): mapeador simples de objetos.
@@ -180,5 +180,6 @@ __________________________________________
 		ViewComponente: As notificações ficam no "Request"
 		
 @section Scripts : só sera executado apos os scripts das paginas pais serem carregados.
+ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe do identity é do aspnet
 	
 	

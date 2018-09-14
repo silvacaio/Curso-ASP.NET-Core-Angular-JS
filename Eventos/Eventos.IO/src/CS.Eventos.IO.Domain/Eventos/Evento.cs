@@ -147,7 +147,13 @@ namespace CS.Eventos.IO.Domain.Eventos
             }
         }
 
-        //valida Nome empresa
+        private void ValidarEmpresa()
+        {
+            RuleFor(c => c.NomeEmpresa)
+                     .NotEmpty()
+                     .NotNull()
+                     .WithMessage(Resources.Evento.Erros.PRESENCIAL_SEM_ENDERECO);
+        }
 
         #endregion
 

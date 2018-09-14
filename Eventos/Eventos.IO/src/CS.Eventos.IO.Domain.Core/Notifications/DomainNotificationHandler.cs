@@ -19,9 +19,7 @@ namespace CS.Eventos.IO.Domain.Core.Notifications
 
         public void Handle(DomainNotification message)
         {
-            _notifications.Add(message);
-            System.Console.ForegroundColor = System.ConsoleColor.Red;
-            System.Console.WriteLine($"Erro {message.Value}");
+            _notifications.Add(message);          
         }
 
         public bool HasNotifications()

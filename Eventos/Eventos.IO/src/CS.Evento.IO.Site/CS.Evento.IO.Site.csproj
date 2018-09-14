@@ -17,4 +17,8 @@
     <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.IoC\CS.Eventos.IO.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
 </Project>

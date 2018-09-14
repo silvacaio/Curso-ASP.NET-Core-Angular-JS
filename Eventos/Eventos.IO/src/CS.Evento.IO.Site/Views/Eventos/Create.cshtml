@@ -34,12 +34,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
+                <input asp-for="DataInicio" type="text" asp-format="{0:dd/MM/yyyy}" class="form-control" />
                 <span asp-validation-for="DataInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateFinal" class="control-label"></label>
-                <input asp-for="DateFinal" class="form-control" />
+                <input asp-for="DateFinal" type="text" asp-format="{0:dd/MM/yyyy}" class="form-control" />
                 <span asp-validation-for="DateFinal" class="text-danger"></span>
             </div>
             <div class="form-group">

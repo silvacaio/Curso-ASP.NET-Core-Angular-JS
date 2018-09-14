@@ -9,6 +9,8 @@ using CS.Evento.IO.Site.Data;
 using CS.Eventos.IO.Application.ViewModels;
 using CS.Eventos.IO.Application.Interfaces;
 using CS.Eventos.IO.Domain.Core.Notifications;
+using CS.Eventos.IO.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CS.Evento.IO.Site.Controllers
 {
@@ -17,7 +19,8 @@ namespace CS.Evento.IO.Site.Controllers
         private readonly IEventoAppService _eventoAppService;
 
         public EventosController(IEventoAppService eventoAppService,
-                        IDomainNotificationHandler<DomainNotification> notifications) : base(notifications)
+                        IDomainNotificationHandler<DomainNotification> notifications,
+                          IUser user) : base(notifications, user)
         {
             _eventoAppService = eventoAppService;
         }
@@ -46,18 +49,21 @@ namespace CS.Evento.IO.Site.Controllers
             return View(eventoViewModel);
         }
 
+        [Authorize]
         // GET: Eventos/Create
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Id,Nome,DescricaoCurta,DescricaoLonga,DataInicio,DateFinal,Gratuito,Valor,Online,NomeEmpresa,CategoriaId,OrganizadorId")] EventoViewModel eventoViewModel)
         {
             if (!ModelState.IsValid) return View(eventoViewModel);
 
+            eventoViewModel.OrganizadorId = OrganizadorId;
             _eventoAppService.Registrar(eventoViewModel);
 
             ViewBag.RetornoPost = OperacaoValida() ? "success,Evento registrado com sucesso." : "error,Evento não registrado. Verifique as mensagens.";
@@ -65,6 +71,7 @@ namespace CS.Evento.IO.Site.Controllers
             return View(eventoViewModel);
         }
 
+        [Authorize]
         // GET: Eventos/Edit/5
         public IActionResult Edit(Guid? id)
         {
@@ -84,6 +91,7 @@ namespace CS.Evento.IO.Site.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public IActionResult Edit([Bind("Id,Nome,DescricaoCurta,DescricaoLonga,DataInicio,DateFinal,Gratuito,Valor,Online,NomeEmpresa,CategoriaId,OrganizadorId")] EventoViewModel eventoViewModel)
         {
             if (!ModelState.IsValid) return View(eventoViewModel);
@@ -95,6 +103,7 @@ namespace CS.Evento.IO.Site.Controllers
             return View(eventoViewModel);
         }
 
+        [Authorize]
         // GET: Eventos/Delete/5
         public IActionResult Delete(Guid? id)
         {
@@ -115,6 +124,7 @@ namespace CS.Evento.IO.Site.Controllers
         // POST: Eventos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public IActionResult DeleteConfirmed(Guid id)
         {
             _eventoAppService.Excluir(id);

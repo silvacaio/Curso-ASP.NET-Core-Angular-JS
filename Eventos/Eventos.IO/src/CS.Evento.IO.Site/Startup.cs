@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using CS.Eventos.IO.Infra.CrossCutting.Bus;
 using CS.Eventos.IO.Infra.CrossCutting.IoC;
 using AutoMapper;
+using CS.Evento.IO.Site.Models;
+using CS.Eventos.IO.Domain.Interfaces;
 
 namespace CS.Evento.IO.Site
 {
@@ -43,7 +45,9 @@ namespace CS.Evento.IO.Site
             //services.AddAutoMapper(typeof(Startup));
           //  Eventos.IO.Application.AutoMapper.AutoMapperConfiguration.RegisterMappings();
 
-            RegisterServices(services);           
+            RegisterServices(services);
+            //ASPNET
+            services.AddScoped<IUser, AspNetUser>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

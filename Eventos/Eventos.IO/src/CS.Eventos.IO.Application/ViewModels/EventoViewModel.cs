@@ -29,14 +29,14 @@ namespace CS.Eventos.IO.Application.ViewModels
 
         [Display(Name = "Inicio do evento")]
         [Required(ErrorMessage = "Data é requerida")]
-        [DataType(DataType.Text)]
+        [DataType(DataType.Date)]
         //[DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataInicio { get; set; }
 
         [Display(Name = "Fim do evento")]
         [Required(ErrorMessage = "Data é requerida")]
-        [DataType(DataType.Text)]
+        [DataType(DataType.Date)]
         //[DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateFinal { get; set; }

@@ -14,7 +14,9 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
     public class EventoCommandHandler : CommandHandler,
         IHandler<RegistrarEventoCommand>,
         IHandler<RemoverEventoCommand>,
-        IHandler<AtualizarEventoCommand>
+        IHandler<AtualizarEventoCommand>,
+        IHandler<IncluirEnderecoEventoCommand>,
+        IHandler<AtualizarEnderecoEventoCommand>
     {
         private readonly IEventoRepository _eventoRepository;
         private readonly IBus _bus;
@@ -99,6 +101,13 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                                                           eventoAtual.Endereco,
                                                           message.CategoriaId);
 
+            //TODO: pq não está na entity do evento? Nãi é ele a responsavel por saber o que é obrigatorio por ela ou não?
+            if (!evento.Online && evento.Endereco == null)
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possível atualizar um evento sem informar o endereço"));
+                return;
+            }
+
             if (!EventoValido(evento)) return;
 
             _eventoRepository.Atualizar(evento);
@@ -135,6 +144,38 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
             _bus.RaiseEvent(new DomainNotification(messageType, "Evento não encontrado"));
             return false;
+        }
+
+        public void Handle(IncluirEnderecoEventoCommand message)
+        {
+            var endereco = new Endereco(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value);
+            if (!endereco.EhValido())
+            {
+                NotificarValidacoesErro(endereco.ValidationResult);
+            }
+
+            _eventoRepository.AdicionarEndereco(endereco);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new EnderecoEventoAdicionadoEvent(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value));
+            }
+        }
+
+        public void Handle(AtualizarEnderecoEventoCommand message)
+        {
+            var endereco = new Endereco(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value);
+            if (!endereco.EhValido())
+            {
+                NotificarValidacoesErro(endereco.ValidationResult);
+            }
+
+            _eventoRepository.AtualizarEndereco(endereco);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new EnderecoEventoAtualizadoEvent(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value));
+            }
         }
     }
 }

@@ -55,6 +55,23 @@ namespace CS.Eventos.IO.Application.Services
             return _mapper.Map<IEnumerable<EventoViewModel>>(_repository.ObterTodos());
         }
 
+        public void AdicionarEndereco(EnderecoViewModel enderecoViewModel)
+        {
+            var enderecoCommand = _mapper.Map<IncluirEnderecoEventoCommand>(enderecoViewModel);
+            _bus.SendCommand(enderecoCommand);
+        }
+
+        public void AtualizarEndreco(EnderecoViewModel enderecoViewModel)
+        {
+            var enderecoCommand = _mapper.Map<AtualizarEnderecoEventoCommand>(enderecoViewModel);
+            _bus.SendCommand(enderecoCommand);
+        }
+
+        public EnderecoViewModel ObterEnderecoPorId(Guid id)
+        {
+            return _mapper.Map<EnderecoViewModel>(_repository.ObterEnderecoPorId(id));
+        }
+
         public void Dispose()
         {
             _repository.Dispose();

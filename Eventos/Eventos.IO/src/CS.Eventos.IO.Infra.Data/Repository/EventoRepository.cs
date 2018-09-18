@@ -54,15 +54,15 @@ namespace CS.Eventos.IO.Infra.Data.Repository
 
         public override Evento ObterPorId(Guid id)
         {
-            var sql = @"select * from eventos e " +
-                "left join enderecos en " +
-                "on e.Id = en.EventoId" +
-                "where e.Id = @uid";
+            var sql = @"select * from eventos E " +
+                "left join enderecos EN " +
+                "on E.Id = EN.EventoId " +
+                "where E.Id = @uid";
 
             var evento = Db.Database.GetDbConnection().Query<Evento, Endereco, Evento>(sql,
                 (e, en) =>
                 {
-                    if (en != null)
+                    if (!(en is null))
                         e.AtributirEndereco(en);
 
                     return e;

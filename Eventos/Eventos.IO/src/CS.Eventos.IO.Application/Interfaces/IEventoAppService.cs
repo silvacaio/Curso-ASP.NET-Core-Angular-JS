@@ -12,5 +12,8 @@ namespace CS.Eventos.IO.Application.Interfaces
         EventoViewModel ObertPorId(Guid id);
         void Atualizar(EventoViewModel eventoViewModel);
         void Excluir(Guid id);
+        void AdicionarEndereco(EnderecoViewModel enderecoViewModel);
+        void AtualizarEndreco(EnderecoViewModel enderecoViewModel);
+        EnderecoViewModel ObterEnderecoPorId(Guid id);
     }
 }

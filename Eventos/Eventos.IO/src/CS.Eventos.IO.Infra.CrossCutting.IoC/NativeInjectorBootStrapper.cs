@@ -12,6 +12,7 @@ using CS.Eventos.IO.Domain.Organizadores.Commands;
 using CS.Eventos.IO.Domain.Organizadores.Events;
 using CS.Eventos.IO.Domain.Organizadores.Repository;
 using CS.Eventos.IO.Infra.CrossCutting.Bus;
+using CS.Eventos.IO.Infra.CrossCutting.Identity.Models;
 using CS.Eventos.IO.Infra.Data.Context;
 using CS.Eventos.IO.Infra.Data.Repository;
 using CS.Eventos.IO.Infra.Data.UoW;
@@ -25,8 +26,6 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-
-
             //Application
             services.AddScoped<IEventoAppService, EventoAppService>();
             services.AddScoped<IOrganizadorAppService, OrganizadorAppService>();
@@ -38,6 +37,8 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<RegistrarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<AtualizarEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<RemoverEventoCommand>, EventoCommandHandler>();
+            services.AddScoped<IHandler<IncluirEnderecoEventoCommand>, EventoCommandHandler>();
+            services.AddScoped<IHandler<AtualizarEnderecoEventoCommand>, EventoCommandHandler>();
             services.AddScoped<IHandler<RegistrarOrganizadorCommand>, OrganizadorCommandHandler>();
 
             //Domain - Events
@@ -45,6 +46,8 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<EventoRegistradoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoAtualizadoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<EventoRemovidoEvent>, EventoEventHandler>();
+            services.AddScoped<IHandler<EnderecoEventoAdicionadoEvent>, EventoEventHandler>();
+            services.AddScoped<IHandler<EnderecoEventoAtualizadoEvent>, EventoEventHandler>();
             services.AddScoped<IHandler<OrganizadorRegistradoEvent>, OrganizadorEventHandler>();
 
             //Infra - Data
@@ -55,6 +58,9 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
 
             //Infra - Bus
             services.AddScoped<IBus, InMemoryBus>();
+
+            //Infra - Identity
+            services.AddScoped<IUser, AspNetUser>();
         }
     }
 }

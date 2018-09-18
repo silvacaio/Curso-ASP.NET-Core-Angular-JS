@@ -182,4 +182,7 @@ __________________________________________
 @section Scripts : só sera executado apos os scripts das paginas pais serem carregados.
 ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe do identity é do aspnet
 	
+17 - Finalizando as funcionalidades de Apresentação: 2:444444
+		
+		
 	

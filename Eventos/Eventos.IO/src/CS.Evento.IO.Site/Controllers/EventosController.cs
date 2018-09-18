@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using CS.Evento.IO.Site.Data;
 using CS.Eventos.IO.Application.ViewModels;
 using CS.Eventos.IO.Application.Interfaces;
 using CS.Eventos.IO.Domain.Core.Notifications;
@@ -59,7 +53,7 @@ namespace CS.Evento.IO.Site.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Nome,DescricaoCurta,DescricaoLonga,DataInicio,DateFinal,Gratuito,Valor,Online,NomeEmpresa,CategoriaId,OrganizadorId")] EventoViewModel eventoViewModel)
+        public IActionResult Create(EventoViewModel eventoViewModel)
         {
             if (!ModelState.IsValid) return View(eventoViewModel);
 
@@ -96,9 +90,17 @@ namespace CS.Evento.IO.Site.Controllers
         {
             if (!ModelState.IsValid) return View(eventoViewModel);
 
+            eventoViewModel.OrganizadorId = OrganizadorId; //Não camada de DOMAIN é validado se este organizador é realmente o dono do EVENTO
+
             _eventoAppService.Atualizar(eventoViewModel);
 
             ViewBag.RetornoPost = OperacaoValida() ? "success,Evento atualizado com sucesso." : "error,Evento não pode ser atualizado. Verifique as mensagens.";
+
+            var eventoAtualizado = _eventoAppService.ObertPorId(eventoViewModel.Id);
+            if (eventoAtualizado.Online)
+                eventoViewModel.Endereco = null;
+            else
+                eventoViewModel = eventoAtualizado;
 
             return View(eventoViewModel);
         }
@@ -129,6 +131,67 @@ namespace CS.Evento.IO.Site.Controllers
         {
             _eventoAppService.Excluir(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult IncluirEndereco(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            return PartialView("_IncluirEndereco", eventoViewModel);
+        }
+
+        public IActionResult AtualizarEndereco(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            return PartialView("_AtualizarEndereco", eventoViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult IncluirEndereco(EventoViewModel eventoViewModel)
+        {
+            ModelState.Clear();// Não valida a model state pois nesse momento somente a parte do endereço deve ser validada
+            eventoViewModel.Endereco.EventoId = eventoViewModel.Id;
+            _eventoAppService.AdicionarEndereco(eventoViewModel.Endereco);
+
+            if (OperacaoValida())
+            {
+                string url = Url.Action("ObterEndereco", "Eventos", new { id = eventoViewModel.Id });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_IncluirEndereco", eventoViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AtualizarEndereco(EventoViewModel eventoViewModel)
+        {
+            ModelState.Clear();// Não valida a model state pois nesse momento somente a parte do endereço deve ser validada
+            _eventoAppService.AtualizarEndreco(eventoViewModel.Endereco);
+
+            if (OperacaoValida())
+            {
+                string url = Url.Action("ObterEndereco", "Eventos", new { id = eventoViewModel.Id });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_AtualizarEndereco", eventoViewModel);
+        }
+
+        [HttpGet]
+        public IActionResult ObterEndereco(Guid id)
+        {
+            return PartialView("_DetalhesEndereco", _eventoAppService.ObertPorId(id));
         }
     }
 }

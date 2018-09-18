@@ -90,6 +90,7 @@ namespace CS.Eventos.IO.Domain.Eventos
 
             //Validacões adicionais
             ValidarEndereco();
+            ValidarEmpresa();
         }
 
         private void ValidarNome()

@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <vc:Summary></vc:Summary>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="OrganizadorId" />
             <div class="form-group">
@@ -31,7 +31,7 @@
                 <span asp-validation-for="DescricaoLonga" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataInicio"  class="control-label"></label>
+                <label asp-for="DataInicio" class="control-label"></label>
                 <input asp-for="DataInicio" type="text" asp-format="{0:dd/MM/yyyy}" class="form-control" />
                 <span asp-validation-for="DataInicio" class="text-danger"></span>
             </div>
@@ -66,24 +66,32 @@
             </div>
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
-                @Html.PartialAsync("_Categorias")
+                @Html.Partial("_Categorias")
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="OrganizadorId" class="control-label"></label>
-                <input asp-for="OrganizadorId" class="form-control" />
-                <span asp-validation-for="OrganizadorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Atualizar Evento" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar para Lista</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div id="EnderecoForm">
+    <div id="EnderecoTarget">
+        @Html.Partial("_DetalhesEndereco")
+    </div>
 </div>
+
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -93,7 +101,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt.min.js"></script>
 
     <script>
-        ValidacoesEvento();
+        ValidacoesEvento(); 
+        AjaxModal();
     </script>
 
     @{
@@ -101,23 +110,7 @@
         {
             var notificacao = ViewBag.RetornoPost.ToString().Split(',');
             <script>
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    "newestOnTop": false,
-                    "progressBar": false,
-                    "positionClass": "toast-top-right",
-                    "preventDuplicates": false,
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "5000",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                };
+
 
                 toastr["@notificacao[0]"]("@notificacao[1]");
             </script>

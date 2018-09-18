@@ -1,3 +1,4 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.Data\bin\Debug\netcoreapp2.1\appsettings.json
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.Data\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.Data.deps.json
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.Data\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.Data.runtimeconfig.json
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.Data\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.Data.runtimeconfig.dev.json

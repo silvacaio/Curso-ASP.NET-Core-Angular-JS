@@ -4,14 +4,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CS.Evento.IO.Site.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CS.Eventos.IO.Infra.CrossCutting.Bus;
 using CS.Eventos.IO.Infra.CrossCutting.IoC;
 using AutoMapper;
-using CS.Evento.IO.Site.Models;
-using CS.Eventos.IO.Domain.Interfaces;
+using CS.Eventos.IO.Infra.CrossCutting.Identity.Data;
 
 namespace CS.Evento.IO.Site
 {
@@ -42,12 +40,8 @@ namespace CS.Evento.IO.Site
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddAutoMapper();
-            //services.AddAutoMapper(typeof(Startup));
-          //  Eventos.IO.Application.AutoMapper.AutoMapperConfiguration.RegisterMappings();
-
-            RegisterServices(services);
-            //ASPNET
-            services.AddScoped<IUser, AspNetUser>();
+         
+            RegisterServices(services);         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -20,14 +20,17 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
     {
         private readonly IEventoRepository _eventoRepository;
         private readonly IBus _bus;
+        private readonly IUser _user;
 
         public EventoCommandHandler(IEventoRepository eventoRepository,
                                     IUnitOfWork uow,
                                     IBus bus,
-                                    IDomainNotificationHandler<DomainNotification> _notification) : base(uow, bus, _notification)
+                                    IDomainNotificationHandler<DomainNotification> _notification,
+                                    IUser user) : base(uow, bus, _notification)
         {
             _eventoRepository = eventoRepository;
             _bus = bus;
+            _user = user;
         }
 
         public void Handle(RegistrarEventoCommand message)
@@ -73,7 +76,19 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
         public void Handle(RemoverEventoCommand message)
         {
             if (!EventoExistente(message.Id, message.MessageType)) return;
-            _eventoRepository.Remover(message.Id);
+
+            var eventoAtual = _eventoRepository.ObterPorId(message.Id);
+
+            if (eventoAtual.OrganizadorId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Evento não pertence ao organizador."));
+                return;
+            }
+
+            //Validações de negocio
+            eventoAtual.ExcluirEvento();
+
+            _eventoRepository.Atualizar(eventoAtual);
 
             if (Commit())
                 _bus.RaiseEvent(new EventoRemovidoEvent(message.Id));
@@ -87,7 +102,11 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
 
             var eventoAtual = _eventoRepository.ObterPorId(message.Id);
 
-            //TODO: validar se o evento pertence a pessoa que está  editando
+            if (eventoAtual.OrganizadorId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Evento não pertence ao organizador."));
+                return;
+            }
 
             var evento = EventoFactory.NovoEventoCompleto(message.Id,
                                                           message.Nome,
@@ -102,7 +121,7 @@ namespace CS.Eventos.IO.Domain.Eventos.Commands
                                                           message.CategoriaId);
 
             //TODO: pq não está na entity do evento? Nãi é ele a responsavel por saber o que é obrigatorio por ela ou não?
-            if (!evento.Online && evento.Endereco == null)
+            if (!evento.Online && evento.Endereco is null) //TODO: == NULL RETORNO SEMPRE TRUE
             {
                 _bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possível atualizar um evento sem informar o endereço"));
                 return;

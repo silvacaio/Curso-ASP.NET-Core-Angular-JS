@@ -10,9 +10,6 @@ namespace CS.Eventos.IO.Infra.CrossCutting.Identity.Models.AccountViewModels
 
         [Required]
         [DataType(DataType.Password)]
-        public string Senha { get; set; }
-
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+        public string Senha { get; set; }    
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace CS.Evento.IO.Site.Areas.Identity.Pages.Account
@@ -23,7 +23,7 @@ namespace CS.Evento.IO.Site.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
-        private readonly IOrganizadorAppService _organizadorAppService;   
+        private readonly IOrganizadorAppService _organizadorAppService;
 
 
         public RegisterModel(
@@ -84,9 +84,17 @@ namespace CS.Evento.IO.Site.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
+                    var claims = new List<System.Security.Claims.Claim>(){
+                        new System.Security.Claims.Claim("Eventos", "Ler") ,
+                        new System.Security.Claims.Claim("Eventos", "Gravar")};
+
+
+                    await _userManager.AddClaimsAsync(user, claims);
 
                     var organizador = new OrganizadorViewModel()
                     {
@@ -110,7 +118,7 @@ namespace CS.Evento.IO.Site.Areas.Identity.Pages.Account
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { userId = user.Id, code = code },
+                        values: new { userId = user.Id, code },
                         protocol: Request.Scheme);
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",

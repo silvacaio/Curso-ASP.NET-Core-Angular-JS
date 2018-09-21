@@ -93,3 +93,7 @@ D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Deb
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Debug\netcoreapp2.1\CS.Evento.IO.Site.csproj.CopyComplete
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Debug\netcoreapp2.1\CS.Evento.IO.Site.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Debug\netcoreapp2.1\CS.Evento.IO.Site.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Debug\netcoreapp2.1\Razor\Views\Eventos\MeusEventos.g.cshtml.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\obj\Debug\netcoreapp2.1\Razor\Views\Shared\NotFound.g.cshtml.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Evento.IO.Site\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.pdb

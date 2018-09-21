@@ -26,6 +26,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "CS.Eventos.IO.Application": "1.0.0",
+          "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters": "1.0.0",
           "CS.Eventos.IO.Infra.CrossCutting.Bus": "1.0.0",
           "CS.Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "CS.Eventos.IO.Infra.CrossCutting.IoC": "1.0.0",
@@ -1880,6 +1881,19 @@
           "CS.Eventos.IO.Domain.Core.dll": {}
         }
       },
+      "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Abstractions": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.Core": "2.1.2",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.1.2"
+        },
+        "runtime": {
+          "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.dll": {}
+        },
+        "compile": {
+          "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.dll": {}
+        }
+      },
       "CS.Eventos.IO.Infra.CrossCutting.Bus/1.0.0": {
         "dependencies": {
           "CS.Eventos.IO.Domain.Core": "1.0.0"
@@ -1917,6 +1931,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "5.0.1",
           "CS.Eventos.IO.Application": "1.0.0",
           "CS.Eventos.IO.Domain": "1.0.0",
+          "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters": "1.0.0",
           "CS.Eventos.IO.Infra.CrossCutting.Bus": "1.0.0",
           "CS.Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "CS.Eventos.IO.Infra.Data": "1.0.0",
@@ -5366,6 +5381,11 @@
       "sha512": ""
     },
     "CS.Eventos.IO.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CS.Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

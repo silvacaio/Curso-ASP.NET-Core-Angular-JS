@@ -182,7 +182,40 @@ __________________________________________
 @section Scripts : só sera executado apos os scripts das paginas pais serem carregados.
 ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe do identity é do aspnet
 	
-17 - Finalizando as funcionalidades de Apresentação: 2:444444
+17 - Finalizando as funcionalidades de Apresentação: 2:44
+
+	Injeção de dependencia dentro da VIEW: CONCLUIDA
+	javascript:history.go(-1): volta para a página anterior.
+	3:30: pagina de detalhes
+	
+	   if (!evento.Online && evento.Endereco == null) = ESTA RETORNANDO TRUE MESMO COM O O ENDERECO DIFERENTE DE NULL
 		
+18 - Tratamento e Log de Erros e Auditoria no MVC: CONCLUIDA
+
+		Mover accesdenied pra Shared?
+		-Tratamento de erros
+		Logs de erros é fundamental.
+				Utilizar Filtros.
+				
+		Elmah: serviço de gravação do log. PRECISA?
+		Log de auditoria.
+		
+19 - 19 - Camada de Serviços ASPNET WebAPI: 1:51
+		
+		Irá expor para a camada de apresentação tudo aquilo que que nossa aplicação é capaz de fazer.
+		REST X SOAP:
+			SOAP: Mais antigo - Protocolo de marcação XML
+			REST: Ganhou destaque devido a "era mobile", transfere o data em seu estado puro, sem o envolope. Tornando a mensagem muito menor.
+				  
+				  Versionamento: 
+				  Construindo um Middlewares: 2:50
+				  
+				 Mantendo o usuario logado: TOKEN.
+				 
+				 JWT:
+					Primeira parte diz respeito sobre a criptografia do Token.
+					Segunda parte é o "dados" do token.
+					Terceira parte: assinatura, a palavra chave pra quebrar a criptografia.
+			
 		
 	

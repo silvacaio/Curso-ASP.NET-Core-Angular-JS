@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using CS.Eventos.IO.Domain.Interfaces
+@inject IUser user
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -26,13 +29,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CS.Evento.IO.Site</a>
+                <a asp-area="" asp-controller="Eventos" asp-action="Index" class="navbar-brand">CS.Evento.IO.Site</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Eventos" asp-action="Index">Próximos Eventos</a></li>
+                    @if (user.IsAuthenticated())
+                    {
+                        <li><a asp-area="" asp-controller="Eventos" asp-action="MeusEventos">Meus Eventos</a></li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -53,7 +58,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     </environment>
     <environment exclude="Development">

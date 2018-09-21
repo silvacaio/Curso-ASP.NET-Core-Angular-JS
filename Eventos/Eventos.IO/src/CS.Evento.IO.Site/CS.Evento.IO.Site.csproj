@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CS.Eventos.IO.Application\CS.Eventos.IO.Application.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj" />
     <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.Bus\CS.Eventos.IO.Infra.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.Identity\CS.Eventos.IO.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.IoC\CS.Eventos.IO.Infra.CrossCutting.IoC.csproj" />
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Eventos\MeusEventos.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Eventos\_AtualizarEndereco.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

@@ -11,6 +11,7 @@ using CS.Eventos.IO.Domain.Interfaces;
 using CS.Eventos.IO.Domain.Organizadores.Commands;
 using CS.Eventos.IO.Domain.Organizadores.Events;
 using CS.Eventos.IO.Domain.Organizadores.Repository;
+using CS.Eventos.IO.Infra.CrossCutting.AspNetFilters;
 using CS.Eventos.IO.Infra.CrossCutting.Bus;
 using CS.Eventos.IO.Infra.CrossCutting.Identity.Models;
 using CS.Eventos.IO.Infra.Data.Context;
@@ -18,7 +19,7 @@ using CS.Eventos.IO.Infra.Data.Repository;
 using CS.Eventos.IO.Infra.Data.UoW;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-
+using Microsoft.Extensions.Logging;
 
 namespace CS.Eventos.IO.Infra.CrossCutting.IoC
 {
@@ -61,6 +62,11 @@ namespace CS.Eventos.IO.Infra.CrossCutting.IoC
 
             //Infra - Identity
             services.AddScoped<IUser, AspNetUser>();
+
+            //Infra - Filtros
+            services.AddScoped<ILogger<GlobalExceptionHandlingFilter>, Logger<GlobalExceptionHandlingFilter>>();
+            services.AddScoped<ILogger<GlobalActionLogger>, Logger<GlobalActionLogger>>();
+            services.AddScoped<GlobalActionLogger>();
         }
     }
 }

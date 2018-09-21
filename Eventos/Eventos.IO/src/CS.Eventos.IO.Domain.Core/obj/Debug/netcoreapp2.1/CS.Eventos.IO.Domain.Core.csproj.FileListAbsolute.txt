@@ -6,3 +6,4 @@ D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.AssemblyInfo.cs
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.dll
 D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Domain.Core\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Domain.Core.csprojAssemblyReference.cache

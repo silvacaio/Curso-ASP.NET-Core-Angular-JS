@@ -45,8 +45,8 @@ namespace CS.Eventos.IO.Infra.Data.Repository
         public IEnumerable<Evento> ObterEventoPorOrganizador(Guid organizadorId)
         {
             var sql = @"select * from eventos e " +
-               "where e.excluido = 0" +
-               "and e.organizadorid = @oid" +
+               "where e.excluido = 0 " +
+               "and e.organizadorid = @oid " +
                "order by e.datefinal desc";
 
             return Db.Database.GetDbConnection().Query<Evento>(sql, new { oid = organizadorId });
@@ -69,6 +69,13 @@ namespace CS.Eventos.IO.Infra.Data.Repository
                 }, new { uid = id });
 
             return evento.FirstOrDefault();
+        }
+
+        public override void Remover(Guid id)
+        {
+            var evento = ObterPorId(id);
+            evento.ExcluirEvento();
+            Atualizar(evento);         
         }
     }
 }

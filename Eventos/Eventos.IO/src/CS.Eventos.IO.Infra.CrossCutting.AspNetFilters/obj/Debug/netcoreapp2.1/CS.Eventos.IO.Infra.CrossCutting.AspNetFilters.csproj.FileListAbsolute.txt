@@ -1,0 +1,9 @@
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.deps.json
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\bin\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj.CoreCompileInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.AssemblyInfoInputs.cache
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.AssemblyInfo.cs
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.dll
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.pdb
+D:\Cursos\ASPNET_and_ANGULARJS2\Eventos\Eventos.IO\src\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\obj\Debug\netcoreapp2.1\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.csprojAssemblyReference.cache

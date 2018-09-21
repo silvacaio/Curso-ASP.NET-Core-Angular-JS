@@ -1,12 +1,11 @@
 ﻿@model CS.Eventos.IO.Application.ViewModels.EventoViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Evento";
 }
 
-<h2>Edit</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>EventoViewModel</h4>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" />
 <hr />
 <div class="row">
@@ -71,7 +70,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Atualizar Evento" class="btn btn-success" />
+                <input type="submit" id="btnSubmit" value="Atualizar Evento" class="btn btn-success" />
                 <a asp-action="Index" class="btn btn-info">Voltar para Lista</a>
             </div>
         </form>
@@ -101,7 +100,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.pt.min.js"></script>
 
     <script>
-        ValidacoesEvento(); 
+        ValidacoesEvento();
         AjaxModal();
     </script>
 
@@ -112,8 +111,28 @@
             <script>
 
 
-                toastr["@notificacao[0]"]("@notificacao[1]");
+                Command: toastr["@notificacao[0]"]("@notificacao[1]");
             </script>
+
+            if (@notificacao[0] == "success")
+            {
+                <script>
+
+                    toastr.options.onclick = function () {
+                        window.location = "https://localhost:44378/meus-eventos";
+                    };
+
+                    toastr.options.onHidden = function () {
+                        window.location = "https://localhost:44378/meus-eventos";
+                    };
+
+                    toastr.options.onCloseClick = function () {
+                        window.location = "https://localhost:44378/meus-eventos";
+                    };
+
+                    $("#btnSubmit").prop("disabled", true);
+                </script>
+            }
         }
     }
 }

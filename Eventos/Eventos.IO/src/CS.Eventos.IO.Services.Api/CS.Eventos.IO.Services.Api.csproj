@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CS.Eventos.IO.Domain.Core\CS.Eventos.IO.Domain.Core.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Domain\CS.Eventos.IO.Domain.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters\CS.Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\CS.Eventos.IO.Infra.CrossCutting.IoC\CS.Eventos.IO.Infra.CrossCutting.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

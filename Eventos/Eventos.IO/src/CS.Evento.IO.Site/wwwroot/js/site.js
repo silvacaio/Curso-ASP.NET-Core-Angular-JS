@@ -16,6 +16,8 @@
         "positionClass": "toast-top-right",
         "preventDuplicates": false,
         "onclick": null,
+        "onHidden": null,
+        "onCloseClick": null,
         "showDuration": "300",
         "hideDuration": "1000",
         "timeOut": "5000",
@@ -117,5 +119,4 @@ function AjaxModal() {
             return false;
         });
     }
-
 }

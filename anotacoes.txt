@@ -200,7 +200,7 @@ ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe 
 		Elmah: serviço de gravação do log. PRECISA?
 		Log de auditoria.
 		
-19 - 19 - Camada de Serviços ASPNET WebAPI: 1:51
+19 - 19 - Camada de Serviços ASPNET WebAPI: CONCLUIDA
 		
 		Irá expor para a camada de apresentação tudo aquilo que que nossa aplicação é capaz de fazer.
 		REST X SOAP:
@@ -220,10 +220,17 @@ ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe 
 				Se só existe a camada de SPA a API deve sera camada de aplicação. Porém, devido ao MVC, a camada de aplicação fornece comunicação com as duas.
 				
 				
-20 - Introdução ao Angular:
+20 - Introdução ao Angular: CONCLUIDA
 
 		Browsersync: Qualquer alteração no códigp fonte já reflete no browser.
 		run aplicação angular: ng serve
-			
+		
+21 - Angular Startup Template: CONCLUIDA
+		Modulo: possui componentes (navegação, funcionalidade)
+		
+		Componente é composto por classe, arquivo html, artquivo css e um servico (um servico pode atender a mais de uma classe)
+		polyfills: utilizado para realizar a compatibilidade com navegadores mais antigos.
+		assets: guardar imagens
+		modulo: todo os modulos que vão ser utilizados no componente e os components
 		
 	

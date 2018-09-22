@@ -42,7 +42,7 @@ namespace CS.Eventos.IO.Application.Services
             _bus.SendCommand(new RemoverEventoCommand(id));
         }
 
-        public EventoViewModel ObertPorId(Guid id)
+        public EventoViewModel ObterPorId(Guid id)
         {
             return _mapper.Map<EventoViewModel>(_repository.ObterPorId(id));
         }

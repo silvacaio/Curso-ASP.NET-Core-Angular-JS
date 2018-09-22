@@ -71,11 +71,17 @@ namespace CS.Eventos.IO.Infra.Data.Repository
             return evento.FirstOrDefault();
         }
 
+        public IEnumerable<Categoria> ObterCategorias()
+        {
+            var sql = @"select * from Categorias";
+            return Db.Database.GetDbConnection().Query<Categoria>(sql);
+        }
+
         public override void Remover(Guid id)
         {
             var evento = ObterPorId(id);
             evento.ExcluirEvento();
             Atualizar(evento);         
-        }
+        }       
     }
 }

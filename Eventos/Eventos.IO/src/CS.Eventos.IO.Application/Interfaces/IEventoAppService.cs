@@ -9,7 +9,7 @@ namespace CS.Eventos.IO.Application.Interfaces
         void Registrar(EventoViewModel eventoViewModel);
         IEnumerable<EventoViewModel> ObterTodos();
         IEnumerable<EventoViewModel> ObterEventoPorOrganizador(Guid organizadorId);
-        EventoViewModel ObertPorId(Guid id);
+        EventoViewModel ObterPorId(Guid id);
         void Atualizar(EventoViewModel eventoViewModel);
         void Excluir(Guid id);
         void AdicionarEndereco(EnderecoViewModel enderecoViewModel);

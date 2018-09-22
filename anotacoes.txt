@@ -216,6 +216,14 @@ ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe 
 					Primeira parte diz respeito sobre a criptografia do Token.
 					Segunda parte é o "dados" do token.
 					Terceira parte: assinatura, a palavra chave pra quebrar a criptografia.
+					
+				Se só existe a camada de SPA a API deve sera camada de aplicação. Porém, devido ao MVC, a camada de aplicação fornece comunicação com as duas.
+				
+				
+20 - Introdução ao Angular:
+
+		Browsersync: Qualquer alteração no códigp fonte já reflete no browser.
+		run aplicação angular: ng serve
 			
 		
 	

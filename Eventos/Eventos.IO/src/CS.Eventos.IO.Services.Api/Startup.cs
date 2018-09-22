@@ -83,20 +83,20 @@ namespace CS.Eventos.IO.Services.Api
                 app.UseHsts();
             }
 
-            
+
             app.UseHttpsRedirection();
-            app.UseMvc();
+            
             app.UseAuthentication();
 
             //O CORS SEVER SOMENTE PARA OUTROS DOMINIOS, POR DEFAULT ELA JA VEM DESABILITADO
             //a aplicação só aceita request de determinados sites, verbos
-            app.UseCors(c =>
-            {
-                c.AllowAnyHeader();
-                c.AllowAnyMethod();
-                c.AllowAnyOrigin();
-                //c.WithOrigins("www.teste.com.br") sistema só aceita request destas origens
-            });
+            //app.UseCors(c =>
+            //{
+            //    c.AllowAnyHeader();
+            //    c.AllowAnyMethod();
+            //    c.AllowAnyOrigin();
+            //    //c.WithOrigins("www.teste.com.br") sistema só aceita request destas origens
+            //});
 
             app.UseStaticFiles();
 
@@ -111,9 +111,11 @@ namespace CS.Eventos.IO.Services.Api
                 s.SwaggerEndpoint("/swagger/v1/swagger.json", "Eventos.IO.API V1.0");
             });
 
+            app.UseMvc();
+
             InMemoryBus.ContainerAccessor = () => contextAccessor.HttpContext.RequestServices;
 
-            app.UseSwaggerAuthorized();
+            //app.UseSwaggerAuthorized();
         }
 
         private static void RegisterServices(IServiceCollection services)

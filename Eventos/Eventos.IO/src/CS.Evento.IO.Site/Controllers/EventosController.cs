@@ -44,7 +44,7 @@ namespace CS.Evento.IO.Site.Controllers
                 return NotFound();
             }
 
-            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            var eventoViewModel = _eventoAppService.ObterPorId(id.Value);
 
             if (eventoViewModel == null)
             {
@@ -89,7 +89,7 @@ namespace CS.Evento.IO.Site.Controllers
                 return NotFound();
             }
 
-            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            var eventoViewModel = _eventoAppService.ObterPorId(id.Value);
 
             if (eventoViewModel == null)
             {
@@ -119,7 +119,7 @@ namespace CS.Evento.IO.Site.Controllers
 
             ViewBag.RetornoPost = OperacaoValida() ? "success,Evento atualizado com sucesso." : "error,Evento não pode ser atualizado. Verifique as mensagens.";
 
-            var eventoAtualizado = _eventoAppService.ObertPorId(eventoViewModel.Id);
+            var eventoAtualizado = _eventoAppService.ObterPorId(eventoViewModel.Id);
             if (eventoAtualizado.Online)
                 eventoViewModel.Endereco = null;
             else
@@ -138,7 +138,7 @@ namespace CS.Evento.IO.Site.Controllers
                 return NotFound();
             }
 
-            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            var eventoViewModel = _eventoAppService.ObterPorId(id.Value);
             if (eventoViewModel == null)
             {
                 return NotFound();
@@ -157,7 +157,7 @@ namespace CS.Evento.IO.Site.Controllers
         [Route("excluir-evento/{id:guid}")]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var eventoViewModel = _eventoAppService.ObertPorId(id);
+            var eventoViewModel = _eventoAppService.ObterPorId(id);
 
             if (ValidarAutoridadeEvento(eventoViewModel))
                 return RedirectToAction("MeusEventos", _eventoAppService.ObterEventoPorOrganizador(OrganizadorId));
@@ -175,7 +175,7 @@ namespace CS.Evento.IO.Site.Controllers
                 return NotFound();
             }
 
-            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            var eventoViewModel = _eventoAppService.ObterPorId(id.Value);
             return PartialView("_IncluirEndereco", eventoViewModel);
         }
 
@@ -207,7 +207,7 @@ namespace CS.Evento.IO.Site.Controllers
                 return NotFound();
             }
 
-            var eventoViewModel = _eventoAppService.ObertPorId(id.Value);
+            var eventoViewModel = _eventoAppService.ObterPorId(id.Value);
             return PartialView("_AtualizarEndereco", eventoViewModel);
         }
 
@@ -233,7 +233,7 @@ namespace CS.Evento.IO.Site.Controllers
         [Route("listar-endereco/{id:guid}")]
         public IActionResult ObterEndereco(Guid id)
         {
-            return PartialView("_DetalhesEndereco", _eventoAppService.ObertPorId(id));
+            return PartialView("_DetalhesEndereco", _eventoAppService.ObterPorId(id));
         }
 
         private bool ValidarAutoridadeEvento(EventoViewModel eventoViewModel)

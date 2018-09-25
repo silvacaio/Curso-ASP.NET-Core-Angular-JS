@@ -233,4 +233,14 @@ ClaimsPrincipal: representa o usuario logado na aolicação, não é uma classe 
 		assets: guardar imagens
 		modulo: todo os modulos que vão ser utilizados no componente e os components
 		
-	
+22 - Rotas e recursos de navegação do Angular: 
+		
+		ng generate component "nome do component"
+		OnInit: executado após a inicialização do componente.		
+		
+		Bootsnipp: Templates pré prontos para bootstrap.
+		Bulma: um substituto do bootstrap
+		
+		Servicos: são injetaveis em componentes
+		
+		publish: ng -b prod

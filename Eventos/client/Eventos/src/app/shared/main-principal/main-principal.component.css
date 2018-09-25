@@ -1,0 +1,9 @@
+.main-container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-right: auto;
+    overflow: hidden;
+    min-height: 350px !important;
+    margin-top: 60px;
+}

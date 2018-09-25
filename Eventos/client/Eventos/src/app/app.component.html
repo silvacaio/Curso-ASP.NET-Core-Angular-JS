@@ -1,34 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="#" class="navbar-brand">Evento.IO</a>
-    </div>
-    <div class="navbar-collapse collapse" [collapse]="isCollapsed">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">Eventos</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<app-menu-superior></app-menu-superior>
+<app-main-principal></app-main-principal>
+<app-footer></app-footer>
 
-<div class="container body-content">
-  <main>
-    <div>
-      <h1>
-        {{title}}
-      </h1>
-    </div>
-  </main>
-  <hr>
-  <footer>
-    <p>CAIO SILVA</p>
-  </footer>
-</div>
